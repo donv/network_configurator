@@ -259,6 +259,7 @@ public class RubotoActivity extends android.app.Activity {
    */
 
   public void onActivityResult(int requestCode, int resultCode, android.content.Intent data) {
+    System.out.println("onActivityResult(int requestCode, int resultCode, android.content.Intent data)");
     if (JRubyAdapter.isInitialized()) {
       if (callbackProcs != null && callbackProcs[CB_ACTIVITY_RESULT] != null) {
         super.onActivityResult(requestCode, resultCode, data);

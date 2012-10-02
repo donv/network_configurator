@@ -6,10 +6,60 @@
                 <action android:name='android.intent.action.MAIN'/>
                 <category android:name='android.intent.category.LAUNCHER'/>
             </intent-filter>
+          <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="eurucamp5" />
+           </intent-filter>
+           <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="wifi"
+                    android:host="eurucamp5" />
+           </intent-filter>
+           <intent-filter>
+               <action android:name="android.intent.action.VIEW" />
+               <action android:name="android.intent.action.EDIT" />
+               <action android:name="android.intent.action.PICK" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <data android:mimeType="application/wifi" />
+           </intent-filter>
         </activity>
         <activity android:exported='false' android:name='org.ruboto.RubotoActivity'/>
         <activity android:exported='false' android:name='org.ruboto.RubotoDialog' android:theme='@android:style/Theme.Dialog'/>
         <service android:exported='false' android:name='org.ruboto.RubotoService'/>
+        <receiver android:name =".WifiConfiguratorReceiver" android:exported="true">
+          <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https"
+                    android:host="eurucamp5" />
+           </intent-filter>
+           <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="wifi"
+                    android:host="eurucamp5" />
+           </intent-filter>
+           <intent-filter>
+               <action android:name="android.intent.action.VIEW" />
+               <action android:name="android.intent.action.EDIT" />
+               <action android:name="android.intent.action.PICK" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <category android:name="android.intent.category.BROWSABLE" />
+               <category android:name="android.intent.category.DEFAULT" />
+               <data android:mimeType="application/wifi" />
+           </intent-filter>
+        </receiver>
     </application>
     <uses-sdk android:targetSdkVersion='8' android:minSdkVersion='8'/>
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 </manifest>
